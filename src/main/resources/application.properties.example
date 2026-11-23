@@ -1,0 +1,63 @@
+# ==========================================
+        # APPLICATION
+        # ==========================================
+
+        spring.application.name=api
+
+
+        # ==========================================
+        # DATABASE - POSTGRESQL
+        # ==========================================
+
+        spring.datasource.url=${DB_URL:jdbc:postgresql://localhost:5432/db_course}
+        spring.datasource.username=${DB_USERNAME:admin}
+        spring.datasource.password=${DB_PASSWORD}
+        spring.datasource.driver-class-name=org.postgresql.Driver
+
+
+        # ==========================================
+        # JPA / HIBERNATE
+        # ==========================================
+
+        # Hibernate identifica automaticamente o dialeto
+        # spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+
+        spring.jpa.hibernate.ddl-auto=validate
+
+        spring.jpa.open-in-view=false
+
+        spring.jpa.show-sql=false
+
+        spring.jpa.properties.hibernate.format_sql=false
+
+
+        # ==========================================
+        # FLYWAY - DATABASE MIGRATIONS
+        # ==========================================
+
+        spring.flyway.enabled=true
+        spring.flyway.baseline-on-migrate=true
+
+
+        # ==========================================
+        # SECURITY / JWT
+        # ==========================================
+
+        security.token.secret=${JWT_SECRET}
+
+
+        # ==========================================
+        # SUPPORT / EMAIL
+        # ==========================================
+
+        support.email=${SUPPORT_EMAIL:support@email.com.br}
+        support.password=${SUPPORT_PASSWORD}
+
+
+        # ==========================================
+        # LOGGING
+        # ==========================================
+
+        logging.level.root=INFO
+        logging.level.org.springframework.web=INFO
+        logging.level.org.hibernate.SQL=INFO
